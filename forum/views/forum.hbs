@@ -1,0 +1,28 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+{{>forumheader}}
+
+
+<div class="container">
+    <div class="row justify-content-md-center" style="background-color:rgb(63, 50, 50)(207, 174, 174); height:50px">
+        <div class="col-6">
+<h4 style="text-align:center;"><u>ForumName</u> : <b>{{forum.name}}</b> </h6>
+        <div style="margin-top: 50px; margin-left:80px"><p style="margin-left:50px;margin-right:50px text-align:center;font-size: 16px;"><u><b>Description</b></u> :{{forum.description}}</p></div>
+    <br>
+
+<a href="/threads/create/{{forum.id}}"><button {{test}} style="margin-left:200px; color:white; background-color:rgb(34, 201, 70);">Create Thread</button></a><br><br>
+<h4 style="text-align: center;">Threads</h4>
+<div style="margin:10px;padding: 10px; ">
+    {{#each threads}}
+    <ol type="1">
+        <li><a href="/threads/{{this.id}}" style="text-decoration: none;">Thread by {{this.userName}}</a></li>
+    </ol>
+    {{/each}}
+</div>
+        </div>
+    </div>
+</div>

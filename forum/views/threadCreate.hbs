@@ -1,0 +1,23 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+
+<h4 style="text-align:center;"><u>{{forum.name}}</u></h6>
+    <details style="margin-left:50px;margin-right: 50px;">
+        <summary>Description :</summary>
+        <p style="text-align:center;font-size: 16px;">{{forum.description}}</p>
+    </details>
+    
+<form action="/threads/create/{{forum.id}}/{{forum.name}}" method="POST">
+  <div style="position: relative;margin-left: 28%;top: 0px; ">
+    <input type="text" name="name" placeholder="Enter Name Of The Thread" style="width: 52%;margin-bottom: 20px;padding: 0 10px; line-height:30px;font-size: 16px;font-weight: 500;">
+  <br>
+  <textarea name="question" id="description" placeholder="Enter Question For The Forum" cols="68" rows="15" style="font-size: 16px;font-weight: 600;padding: 5px 10px"></textarea>
+  <br>
+  <br>
+  <button type="submit" style="position: relative;left:26%;font-weight: 550;">Submit</button>
+  </div>
+</form>

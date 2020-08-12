@@ -1,0 +1,17 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+
+<form action="/forums/create" method="POST">
+  <div style="position: relative;margin-left: 28%;top: 60px; ">
+    <input type="text" name="name" placeholder="Enter Name Of The Forum" style="width: 52%;margin-bottom: 20px;padding: 0 10px; line-height:30px;font-size: 16px;font-weight: 500;">
+  <br>
+  <textarea name="description" id="description" placeholder="Enter Description Of The Forum" cols="68" rows="15" style="font-size: 16px;font-weight: 600;padding: 5px 10px"></textarea>
+  <br>
+  <br>
+  <button type="submit" style="position: relative;left:26%;font-weight: 550;">Submit</button>
+  </div>
+</form>

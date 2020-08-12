@@ -1,0 +1,72 @@
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    nav{
+        height: 60px;
+        background-color: #39424e;
+    }
+    nav i{
+        font-size: 40px;
+        margin: 10px 0 0 200px;
+    }
+    nav a{
+     
+        text-decoration: none;
+        font-size: 17px;
+        color: black;
+    }
+    nav a:hover{
+        text-decoration: none;
+        color:black
+    }
+    nav span{
+        position: relative;
+        bottom: 8px;
+    }
+    nav button{
+        cursor: pointer;
+        
+        background-color: rgb(179, 216, 220);
+        font-size: 14px;
+        font-weight: 700;
+        color: black;
+    }
+    nav #forums{
+        margin-left: 100px;
+        margin-right: 60px;
+        font-weight: 700;
+        color:#fff;
+    }
+     nav #create{
+        margin-left: 10px;
+        margin-right: 60px;
+        font-weight: 700;
+        color:#fff;
+    }
+      nav #thread{
+        margin-left: 10px;
+        margin-right: 60px;
+        font-weight: 700;
+        color:#fff;
+    }
+    nav #LogOut{
+        margin-left: 1200px;
+        margin-right: 100px;
+    }
+</style>
+<nav>
+    <i class="fa fa-comments-o" style="color:rgb(34, 201, 70)"aria-hidden="true"></i>
+    <span>    <a id="forums" href="/forums">Forums</a>
+ <a id="create" href="/forums/create">Create forum</a>
+ <a  id="thread" href="/threads">
+All threads
+</a>
+       <span style="color:white">Welcome {{userName}}</span> 
+<form method="POST" action="/logout?_method=DELETE" style="position: absolute;top:-7px;right:-130px;">
+<button type="submit">LogOut</button>
+</form>
+</span>
+
+</nav>

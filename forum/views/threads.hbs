@@ -1,0 +1,18 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+{{>forumheader}}
+<h4 style="text-align: center;">All Threads</h4>
+    <div style="margin:0 10px;padding:0 10px;">
+        
+        <ul>
+            {{#each threads}}
+           <h4><a href="/threads/{{this.id}}" style="text-decoration: none;"><li><span style="font-size: 16px;">{{this.name}}. Started by
+                        {{this.userName}},  ForumName: {{this.forumName}}</span>
+            </li></a></h4>
+            {{/each}}
+        </ul>
+    </div>

@@ -1,0 +1,39 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+{{>forumheader}}
+
+<h4 style="text-align:center;"><u>ForumName</u> : <b>{{forum.name}}</b></h6>
+    <details style="margin-left: 50px;margin-right: 50px;">
+        <summary>Description :</summary>
+        <p style="text-align:center;font-size: 16px;">{{forum.description}}</p>
+    </details><br>
+
+    <div style="margin:10px;padding:10px;border: 2px solid grey;">
+        <h4 style="text-align: center;">ThreadName : <b>{{thread.name}}</b></h4>
+        <p style="text-align: center;"><b>ThreadQuestion : {{thread.question}}</b></p>
+        <h5 style="text-align: center;">Started by {{thread.userName}}</h5>
+        <br>
+        <form action="/replies/create/{{thread.id}}" method="POST">
+            <textarea name="reply" placeholder="Post Your Reply" id="" cols="50" rows="4    "></textarea><button
+                type=submit>Reply</button>
+        </form>
+
+        <div style="margin:10px;padding:10px;border: 2px solid grey;">
+            <h5 style="text-align: center; margin-bottom: 20px;"><u>All Replies</u></h5>
+            <ul>
+                {{#each replies}}
+                <li style="margin-bottom: 10px;">
+                    <b>{{this.userName}}</b>
+                        <form method="POST" action="/replies/delete/{{this.id}}/{{this.thread}}?_method=DELETE">
+                            <button style="position: relative; bottom:24px;left:80%;">Delete</button></form>
+                    <p style="position: relative;bottom: 23px;">{{this.reply}} </p>
+                    
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>

@@ -1,0 +1,38 @@
+
+{{#if loggedIn}}
+{{>nav2}}
+{{else}}
+{{>nav1}}
+{{/if}}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+{{>forumheader}}
+<h3 style="text-align: center;"><u><span style=" ">All Forums</span></u></h3>
+
+<div class="conatiner">
+<div class="row  justify-content-md-center">
+  <div class="col">
+  <ul>
+  {{#each forums}}
+ <div style="padding:0 20px;margin:10px 10px;cursor: pointer ;">
+  <a href="/forums/{{this.id}}" style="text-decoration: none;">
+  <h3 style="color: rgb(46, 117, 46);"><i class="fa fa-chevron-right" aria-hidden="true"></i>{{this.name}}</h3></a>
+</div>
+  {{/each}}
+  </ul>
+  </div>
+</div>
+
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
